@@ -1003,7 +1003,7 @@ img {
    PAIN POINTS SECTION
    ========================================== */
 .pain-points {
-    padding: 120px 0;
+    padding: 120px 0 0;
     background: var(--cream);
     /* Integrated background */
 }
@@ -2525,7 +2525,7 @@ img {
     .pain-points {
         /* Match site theme */
         background-color: var(--cream);
-        padding: 80px 0 100px;
+        padding: 80px 0 0;
     }
 
     .pain-points .section-title {
