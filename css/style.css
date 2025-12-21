@@ -1208,6 +1208,13 @@ img {
     margin: 0 auto;
 }
 
+.brand-title {
+    color: var(--sienna) !important;
+    margin-bottom: 0px !important;
+    display: block;
+    line-height: 1.2;
+}
+
 .features .section-title {
     color: var(--anthracite);
     /* Reverted to dark for contrast */
