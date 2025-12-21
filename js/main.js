@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (video) {
                 video.currentTime = 0;
-                video.play().catch(e => console.log('Autoplay prevented:', e));
+                // video.play().catch(e => console.log('Autoplay prevented:', e));
 
                 // Check if video is vertical
                 if (video.videoHeight > video.videoWidth) {
