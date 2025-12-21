@@ -196,25 +196,28 @@ document.addEventListener('DOMContentLoaded', () => {
     // Video Modal Logic
     // ==========================================
     // ==========================================
-    // Video Modal Logic (YouTube)
+    // Video Modal Logic (Local File)
     // ==========================================
     const modal = document.getElementById('videoModal');
     const openBtn = document.getElementById('openDemo');
     const closeBtn = document.querySelector('.modal-close');
     const backdrop = document.querySelector('.modal-backdrop');
-    const iframe = document.getElementById('demoVideo');
-
-    // ⚠️ REPLACE THIS WITH YOUR ACTUAL YOUTUBE VIDEO ID
-    const YOUTUBE_VIDEO_ID = '9pEV35mz1us'; // Ohana Guide Demo Short
+    const video = document.getElementById('demoVideo');
+    const modalContent = document.querySelector('.modal-content');
 
     if (openBtn && modal) {
         openBtn.addEventListener('click', () => {
             modal.classList.add('active');
             document.body.style.overflow = 'hidden'; // Prevent scrolling
 
-            if (iframe) {
-                // Auto-play when opening
-                iframe.src = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&rel=0`;
+            if (video) {
+                video.currentTime = 0;
+                video.play().catch(e => console.log('Autoplay prevented:', e));
+
+                // Check if video is vertical
+                if (video.videoHeight > video.videoWidth) {
+                    modalContent.classList.add('vertical');
+                }
             }
         });
 
@@ -222,9 +225,8 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.classList.remove('active');
             document.body.style.overflow = '';
 
-            if (iframe) {
-                // Stop video by resetting src
-                iframe.src = '';
+            if (video) {
+                video.pause();
             }
         };
 
