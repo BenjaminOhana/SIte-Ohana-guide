@@ -195,32 +195,37 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     // Video Modal Logic
     // ==========================================
+    // ==========================================
+    // Video Modal Logic (YouTube)
+    // ==========================================
     const modal = document.getElementById('videoModal');
     const openBtn = document.getElementById('openDemo');
     const closeBtn = document.querySelector('.modal-close');
     const backdrop = document.querySelector('.modal-backdrop');
-    const video = document.getElementById('demoVideo');
-    const modalContent = document.querySelector('.modal-content');
+    const iframe = document.getElementById('demoVideo');
+
+    // ⚠️ REPLACE THIS WITH YOUR ACTUAL YOUTUBE VIDEO ID
+    const YOUTUBE_VIDEO_ID = 'dQw4w9WgXcQ'; // Example ID
 
     if (openBtn && modal) {
         openBtn.addEventListener('click', () => {
             modal.classList.add('active');
             document.body.style.overflow = 'hidden'; // Prevent scrolling
-            if (video) {
-                video.currentTime = 0;
-                video.play().catch(e => console.log('Autoplay prevented:', e));
 
-                // Check if video is vertical
-                if (video.videoHeight > video.videoWidth) {
-                    modalContent.classList.add('vertical');
-                }
+            if (iframe) {
+                // Auto-play when opening
+                iframe.src = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&rel=0&modestbranding=1&showinfo=0`;
             }
         });
 
         const closeModal = () => {
             modal.classList.remove('active');
             document.body.style.overflow = '';
-            if (video) video.pause();
+
+            if (iframe) {
+                // Stop video by resetting src
+                iframe.src = '';
+            }
         };
 
         if (closeBtn) closeBtn.addEventListener('click', closeModal);

@@ -3232,6 +3232,37 @@ img {
         opacity: 0;
     }
 
+    /* Modal Content */
+    .modal-content {
+        position: relative;
+        width: 100%;
+        max-width: 900px;
+        background: black;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+        transform: scale(0.9);
+        opacity: 0;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+    }
+
+    .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        /* 16:9 Aspect Ratio */
+        height: 0;
+        overflow: hidden;
+        background: #000;
+    }
+
+    .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
     .mobile-sticky-cta-btn {
         display: block;
         width: 100%;

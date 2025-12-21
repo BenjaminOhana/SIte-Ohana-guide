@@ -385,13 +385,19 @@
         <div class="modal-backdrop"></div>
         <div class="modal-content">
             <button class="modal-close" aria-label="Fermer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
             </button>
             <div class="video-wrapper">
-                <video id="demoVideo" controls playsinline>
-                    <source src="assets/video/demo.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas la vidéo.
-                </video>
+                <!-- YouTube Embed (Replace VIDEO_ID with your actual YouTube ID) -->
+                <!-- Example: https://www.youtube.com/embed/dQw4w9WgXcQ -->
+                <iframe 
+                    id="demoVideo" 
+                    src="" 
+                    title="Démo Ohana Guide" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
             </div>
         </div>
     </div>
