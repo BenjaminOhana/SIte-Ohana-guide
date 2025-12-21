@@ -1100,7 +1100,9 @@ img {
 /* Transition Section */
 .pain-transition {
     margin-top: 200px;
-    margin-bottom: 200px;
+    /* Keep the Zen top part */
+    margin-bottom: 80px;
+    /* Fix: Reduce button margin to bring text closer */
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -2608,7 +2610,8 @@ img {
     .pain-transition {
         /* Massive generous spacing */
         margin-top: 160px;
-        margin-bottom: 160px;
+        margin-bottom: 60px;
+        /* Reduced to bring content closer */
         display: flex;
         flex-direction: column;
         align-items: center;
