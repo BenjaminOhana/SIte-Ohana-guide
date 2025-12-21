@@ -1064,19 +1064,19 @@ img {
     margin-bottom: 0;
     box-shadow: none;
     /* Subtle glow */
-    filter: drop-shadow(0 0 12px rgba(184, 92, 56, 0.25));
+    filter: drop-shadow(0 0 12px rgba(61, 82, 69, 0.25));
 }
 
 .pain-icon svg {
     width: 48px;
     height: 48px;
-    stroke: var(--sienna);
+    stroke: var(--sage-dark);
     stroke-width: 1.5;
     transition: stroke 0.3s ease;
 }
 
 .pain-item:hover .pain-icon svg {
-    stroke: var(--sienna);
+    stroke: var(--sage-dark);
     /* Keep consistent */
 }
 
@@ -2585,14 +2585,14 @@ img {
         justify-content: center;
         margin-bottom: 8px;
         /* Subtle glow */
-        filter: drop-shadow(0 0 12px rgba(184, 92, 56, 0.3));
+        filter: drop-shadow(0 0 12px rgba(61, 82, 69, 0.3));
     }
 
     .pain-icon svg {
         width: 36px;
         height: 36px;
-        stroke: var(--sienna);
-        /* Emotional Warmth */
+        stroke: var(--sage-dark);
+        /* Deep Green */
         stroke-width: 1.5;
     }
 
