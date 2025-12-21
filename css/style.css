@@ -3339,3 +3339,42 @@ img {
         display: block !important;
     }
 }
+
+/* === FINAL MOBILE VIDEO FIX === */
+@media (max-width: 767px) {
+    .video-modal {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .modal-content {
+        height: auto !important;
+        min-height: 200px !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #000 !important;
+        display: block !important; /* Fix potential flex collapse */
+    }
+
+    .video-wrapper {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        padding-bottom: 0 !important;
+        z-index: 100000 !important;
+        display: block !important;
+        background: orange !important; /* DEBUG COLOR to see if wrapper exists */
+    }
+
+    .video-wrapper video {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        max-height: 80vh !important;
+        display: block !important;
+        object-fit: contain !important;
+        z-index: 100001 !important;
+    }
+}
