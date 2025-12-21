@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Ohana Guide | Le guide interactif pour hôtes Airbnb</title>
+    <meta name="description" content="Transformez votre location en expérience 5 étoiles. Le guide interactif sur mesure pour vos invités.">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://ohanaguide.fr/">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ohanaguide.fr/">
+    <meta property="og:title" content="Ohana Guide | Le guide interactif pour hôtes Airbnb">
+    <meta property="og:description" content="Transformez votre location en expérience 5 étoiles. Le guide interactif qui répond à vos invités 24h/24.">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ohana Guide | Le guide interactif pour hôtes Airbnb">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Sen:wght@400..800&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css?v=3">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="header" id="header">
+        <div class="container header-inner">
+            <a href="#" class="logo">Ohana Guide</a>
+            
+            <nav class="nav">
+                <a href="#features" class="nav-link">Fonctionnalités</a>
+                <a href="#process" class="nav-link">Comment ça marche</a>
+                <a href="#pricing" class="nav-link">Tarifs</a>
+                <a href="https://cal.com/benjamin-poulet-deo6zz/15min" class="btn btn-primary">Réserver un appel</a>
+            </nav>
+            
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#features">Fonctionnalités</a>
+            <a href="#process">Comment ça marche</a>
+            <a href="#pricing">Tarifs</a>
+            <a href="#story">L'histoire</a>
+            <a href="https://cal.com/benjamin-poulet-deo6zz/15min" class="btn btn-primary mobile-menu-cta">Réserver un appel</a>
+        </div>
+    </header>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <!-- Background gradient handled by CSS -->
+        </div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title fade-up">
+                Transformez votre location en expérience <span class="accent">5 étoiles</span>
+            </h1>
+            
+            <p class="hero-subtitle fade-up">
+                Le guide interactif qui répond à vos invités 24h/24.<br>
+                WiFi, adresses locales, consignes — 100% sur mesure.
+            </p>
+            
+            <div class="hero-cta fade-up">
+                <a href="#pricing" class="btn btn-primary btn-lg">
+                    Commencer maintenant
+                </a>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ==================== PAIN POINTS ==================== -->
+    <section class="pain-points">
+        <div class="container">
+            <h2 class="section-title text-center text-sienna fade-up">
+                Vous avez pensé à tout.<br>Sauf au temps que ça vous prend.
+            </h2>
+            
+            <div class="pain-grid">
+                <!-- Item 1: Phone -->
+                <div class="pain-item fade-up stagger-1">
+                    <div class="pain-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    </div>
+                    <p class="pain-text">
+                        <strong>"Je répète toujours les mêmes choses"</strong> — WiFi, parking, code porte, machine à café…
+                    </p>
+                </div>
+                <!-- Item 2: Binder -->
+                <div class="pain-item fade-up stagger-2">
+                    <div class="pain-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                    </div>
+                    <p class="pain-text">
+                        <strong>"Mon classeur papier fait cheap"</strong> — il jure avec le standing du lieu.
+                    </p>
+                </div>
+                <!-- Item 3: File/PDF -->
+                <div class="pain-item fade-up stagger-3">
+                    <div class="pain-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    </div>
+                    <p class="pain-text">
+                        <strong>"Mon PDF, personne ne le lit"</strong> — et les infos sont éparpillées.
+                    </p>
+                </div>
+                <!-- Item 4: Clock -->
+                <div class="pain-item fade-up stagger-4">
+                    <div class="pain-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    </div>
+                    <p class="pain-text">
+                        <strong>"Un voyageur m'a appelé à 23h"</strong> — pour une info qui était déjà dans le livret.
+                    </p>
+                </div>
+                <!-- Item 5: Trending Down/Star -->
+                <div class="pain-item fade-up stagger-5">
+                    <div class="pain-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    </div>
+                    <p class="pain-text">
+                        <strong>"J'ai peur du mauvais avis"</strong> — un 4★ - perte de revenus et de visibilité.
+                    </p>
+                </div>
+                <!-- Item 6: Impersonal/Users -->
+                <div class="pain-item fade-up stagger-6">
+                    <div class="pain-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><line x1="23" y1="11" x2="17" y2="11"></line></svg>
+                    </div>
+                    <p class="pain-text">
+                        <strong>"Je ressemble à tous les autres Airbnb"</strong> — pas de différenciation dans l'accueil.
+                    </p>
+                </div>
+            </div>
+
+            <div class="pain-transition fade-up">
+                <span class="respirez-title">Respirez...</span>
+                <p class="transition-sub">
+                    Il existe une façon plus simple et plus premium d'accueillir vos voyageurs.
+                </p>
+                <div class="transition-arrow">↓</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FEATURES ==================== -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2 class="section-title">Sublimez leur séjour. Libérez votre temps.</h2>
+                <p class="section-subtitle">
+                    Ohana Guide — Vous ne louez plus un logement, vous offrez une expérience.
+                </p>
+            </div>
+            
+            <div class="features-grid">
+                <!-- SVG Gradient Definition -->
+                <svg width="0" height="0" style="position: absolute;">
+                    <defs>
+                        <linearGradient id="solar-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#C4775C;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#F59E0B;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <!-- Feature 1: Zéro question (Zap) -->
+                <div class="feature-card fade-up stagger-1">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Zéro question répétitive</h3>
+                    <p class="feature-desc">
+                        WiFi, équipements, check-in… tout est là, accessible 24/7.
+                    </p>
+                </div>
+                
+                <!-- Feature 2: Effet Wahou (Sparkles) -->
+                <div class="feature-card fade-up stagger-2">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+                            <path d="M5 3v4"></path>
+                            <path d="M9 5H2"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Effet "Wahou" garanti</h3>
+                    <p class="feature-desc">
+                        Vos voyageurs sont impressionnés par le standing dès l'arrivée.
+                    </p>
+                </div>
+                
+                <!-- Feature 3: Design cohérent (Palette) -->
+                <div class="feature-card fade-up stagger-3">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="13.5" cy="6.5" r=".5"></circle>
+                            <circle cx="17.5" cy="10.5" r=".5"></circle>
+                            <circle cx="8.5" cy="7.5" r=".5"></circle>
+                            <circle cx="6.5" cy="12.5" r=".5"></circle>
+                            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Design cohérent</h3>
+                    <p class="feature-desc">
+                        Couleurs, ambiance, photos : le guide prolonge l'expérience du lieu.
+                    </p>
+                </div>
+                
+                <!-- Feature 4: Mises à jour (Refresh) -->
+                <div class="feature-card fade-up stagger-4">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path>
+                            <path d="M21 3v5h-5"></path>
+                            <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path>
+                            <path d="M8 16H3v5"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Mises à jour en 30 sec</h3>
+                    <p class="feature-desc">
+                        Changement de code, nouveau resto… c'est fait instantanément.
+                    </p>
+                </div>
+                
+                <!-- Feature 5: Avis 5* (Award/Shield) -->
+                <div class="feature-card fade-up stagger-5">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Avis 5★ protégés</h3>
+                    <p class="feature-desc">
+                        Plus de petit couac technique qui gâche bêtement un séjour.
+                    </p>
+                </div>
+                
+                <!-- Feature 6: Vous ne faites rien (Coffee) -->
+                <div class="feature-card fade-up stagger-6">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 8h1a4 4 0 1 1 0 8h-1"></path>
+                            <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"></path>
+                            <line x1="6" y1="2" x2="6" y2="4"></line>
+                            <line x1="10" y1="2" x2="10" y2="4"></line>
+                            <line x1="14" y1="2" x2="14" y2="4"></line>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Vous ne faites rien</h3>
+                    <p class="feature-desc">
+                        Je crée, vous validez, c'est en ligne. Service 100% clé en main.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TARGET SEGMENT ==================== -->
+    <section class="target-segment">
+        <div class="container">
+            <div class="target-split-layout">
+                <!-- Left Column: Text Content -->
+                <div class="target-text-column">
+                    
+                    <!-- Positive Block -->
+                    <div class="target-block positive fade-up stagger-1">
+                        <h2 class="target-title">C'est pour vous si…</h2>
+                        <ul class="target-list">
+                            <li>
+                                <div class="target-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                </div>
+                                <span>Vous avez un bien <strong>haut de gamme</strong> ou à thème</span>
+                            </li>
+                            <li>
+                                <div class="target-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </div>
+                                <span>Vous soignez <strong>l'image</strong> et le détail</span>
+                            </li>
+                            <li>
+                                <div class="target-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                </div>
+                                <span>Vous voulez <strong>impressionner</strong> dès l'arrivée</span>
+                            </li>
+                            <li>
+                                <div class="target-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                </div>
+                                <span>Vous cherchez une solution <strong>clé en main</strong></span>
+                            </li>
+                            <li>
+                                <div class="target-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path></svg>
+                                </div>
+                                <span>Vous voulez protéger vos <strong>5 étoiles</strong></span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Negative Block -->
+                    <div class="target-block negative fade-up stagger-2">
+                        <h2 class="target-title muted">Ce n'est PAS pour vous si…</h2>
+                        <ul class="target-list">
+                            <li>
+                                <div class="target-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                </div>
+                                <span>Vous gérez <strong>+10 biens</strong> (masse)</span>
+                            </li>
+                            <li>
+                                <div class="target-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                </div>
+                                <span>Vous cherchez le <strong>moins cher</strong> possible</span>
+                            </li>
+                            <li>
+                                <div class="target-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                </div>
+                                <span>Vous voulez <strong>tout faire vous-même</strong></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right Column: Image -->
+                <!-- Image Column (Right/Bottom) -->
+                <div class="target-image-column fade-up stagger-3">
+                     <div class="target-image-wrapper">
+                        <img src="assets/images/target-zoom.jpg" alt="Ohana Guide Zoom Interface" class="target-real-photo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== DEMO SECTION (CINEMATIC STRIP) ==================== -->
+    <section class="demo-section">
+        <div class="demo-overlay"></div>
+        <div class="container">
+            <div class="demo-wrapper fade-up">
+                <span class="section-label-light">Voyez par vous-même</span>
+                
+                <div class="demo-player-trigger" id="openDemo">
+                    <div class="play-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                    </div>
+                    <span class="play-label">Regarder la démo</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEO MODAL -->
+    <div class="video-modal" id="videoModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Fermer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div class="video-wrapper">
+                <video id="demoVideo" controls playsinline>
+                    <source src="assets/video/demo.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la vidéo.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== PROCESS ==================== -->
+    <section class="process" id="process">
+        <div class="container">
+            <!-- Simplified Layout: Centered Content, No Image -->
+            <div class="process-split-layout" style="display: block; max-width: 800px; margin: 0 auto;">
+                
+                <div class="process-content-column">
+                    <div class="section-header fade-up" style="text-align: center; margin-bottom: 60px; display: block;">
+                        <span class="section-label">Comment ça marche</span>
+                        <h2 class="section-title">Simple comme 1, 2, 3</h2>
+                        <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">
+                            Je m'occupe de tout, vous validez simplement.
+                        </p>
+                    </div>
+                    
+                    <div class="process-steps-vertical" style="max-width: 100%;">
+                        <!-- Step 1 -->
+                        <div class="step-item-vertical fade-up stagger-1">
+                            <div class="step-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                            </div>
+                            <div class="step-content">
+                                <span class="step-watermark-num">1</span>
+                                <h3 class="step-title">On échange</h3>
+                                <p class="step-desc">
+                                    Un appel de 20 min pour comprendre votre bien, votre style, vos besoins.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 2 -->
+                        <div class="step-item-vertical fade-up stagger-2">
+                             <div class="step-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+                            </div>
+                            <div class="step-content">
+                                <span class="step-watermark-num">2</span>
+                                <h3 class="step-title">Je crée</h3>
+                                <p class="step-desc">
+                                    Je designe votre guide sur-mesure (vous validez à chaque étape).
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 3 -->
+                        <div class="step-item-vertical fade-up stagger-3">
+                            <div class="step-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg>
+                            </div>
+                            <div class="step-content">
+                                <span class="step-watermark-num">3</span>
+                                <h3 class="step-title">C'est en ligne</h3>
+                                <p class="step-desc">
+                                    Votre guide est prêt, accessible sur tablette, smartphone ou QR code.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== STORYTELLING (Moved Here) ==================== -->
+    <section class="story-section" id="story">
+        <div class="container">
+            <div class="story-split">
+                <div class="story-content fade-up">
+                    <span class="story-subtitle">L'Histoire</span>
+                    <h2 class="story-title">Derrière Ohana Guide, il y a un hôte. Comme vous.</h2>
+                    
+                    <div class="story-text">
+                        <p>
+                            Je m'appelle Benjamin. J'accompagne des entrepreneurs à créer des offres premium alignées avec leurs valeurs. Mais je suis aussi propriétaire d'un Airbnb — une parenthèse balinaise en plein cœur de la Lorraine.
+                        </p>
+                        <p>
+                            Les SMS à 23h pour le code WiFi ? Les questions répétitives sur le jacuzzi ? Je connais.
+                        </p>
+                        <p>
+                            Alors j'ai créé le guide que j'aurais voulu avoir : une application sur mesure, élégante, qui répond à mes voyageurs sans que j'aie à le faire.
+                        </p>
+                        <p style="font-weight: 600; color: var(--anthracite); margin-bottom: 40px;">
+                            Résultat : une expérience 5 étoiles pour eux. Et du temps retrouvé pour moi.
+                        </p>
+                        <p>
+                            Aujourd'hui, je mets ce savoir-faire au service des hôtes qui, comme moi, veulent offrir l'excellence — sans y laisser leur sérénité.
+                        </p>
+                        
+                        <div style="margin-top: 32px;">
+                            <span style="display: block; font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--sienna); margin-bottom: 8px;">Benjamin</span>
+                        </div>
+
+                        <div style="margin-top: 32px;">
+                            <a href="https://cal.com/benjamin-poulet-deo6zz/15min" class="btn btn-outline">
+                                Discuter de mon projet
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="story-image-wrapper fade-up stagger-1">
+                    <img src="assets/images/benjamin-story.jpg" alt="Benjamin - Fondateur Ohana Guide" class="story-photo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TESTIMONIALS ==================== -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header fade-up">
+                <span class="section-label">Retours d'expérience</span>
+                <h2 class="section-title">Ce qu'en disent les premiers utilisateurs</h2>
+            </div>
+
+            <div class="testimonials-grid">
+                <!-- Testimonial 1: Julien (Gain de temps) -->
+                <div class="testimonial-card fade-up stagger-1">
+                    <div class="stars">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="star-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="star-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="star-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="star-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="star-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                    </div>
+                    <blockquote class="testimonial-text">
+                        "Honnêtement, je ne répondais plus au téléphone après 20h, c'était devenu une corvée. Depuis que j'envoie le lien du guide, c'est le silence radio... mais avec des <strong>notes 5 étoiles</strong> qui tombent."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background: #E0E7FF; color: #4338CA;">J</div>
+                        <div class="author-info">
+                            <span class="author-name">Julien</span>
+                            <span class="author-role">Superhost • Appartement Centre-Ville</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2: Nellie (Design/Luxe) -->
+                <div class="testimonial-card fade-up stagger-2">
+                    <div class="stars">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="star-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="star-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="star-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="star-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="star-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                    </div>
+                    <blockquote class="testimonial-text">
+                        "Mes voyageurs sont très exigeants sur la déco. Je ne pouvais pas leur laisser un classeur en plastique un peu cheap. Là, l'interface est aussi belle que ma rénovation. Ça fait vraiment <strong>Service Palace</strong>."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background: #FCE7F3; color: #BE185D;">N</div>
+                        <div class="author-info">
+                            <span class="author-name">Nellie</span>
+                            <span class="author-role">Propriétaire • Boutique Airbnb</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3: Nicolas (Tablette/iPad focus) -->
+                <div class="testimonial-card fade-up stagger-3">
+                    <div class="stars">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="star-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="star-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="star-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="star-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="star-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                    </div>
+                    <blockquote class="testimonial-text">
+                        "J'ai installé une tablette murale dans l'entrée. Le guide est <strong>optimisé iPad</strong> à la perfection, on dirait une app native. Ça donne une touche technologique que les visiteurs adorent."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background: #DCFCE7; color: #15803D;">N</div>
+                        <div class="author-info">
+                            <span class="author-name">Nicolas</span>
+                            <span class="author-role">Investisseur • Villa Connectée</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== OFFER & CONTACT ==================== -->
+    <section class="offer-section" id="pricing" style="padding: 120px 0; background: var(--cream);">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2 class="section-title">Chaque lieu est unique.<br>Votre guide doit l'être aussi.</h2>
+                
+                <div class="pricing-narrative" style="max-width: 800px; margin: 60px auto; font-size: 1.25rem; line-height: 1.8; color: var(--anthracite);">
+                    <p style="margin-bottom: 32px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                        Un guide aligné avec votre univers — et qui travaille pour vous.
+                    </p>
+                    
+                    <p style="margin-bottom: 24px; font-weight: 500; max-width: 700px; margin-left: auto; margin-right: auto;">
+                        L'investissement dépend de la complexité de votre bien et de vos attentes pour créer une interface unique.
+                    </p>
+
+                    <!-- NEW OFFER CARD -->
+                    <div class="offer-card fade-up">
+                        <!-- Part 1: Subscription -->
+                        <div class="offer-part primary">
+                            <span class="offer-label">La Formule Sérénité</span>
+                            <div class="offer-price">dès 12€<small>/mois</small></div>
+                            <p class="offer-text">
+                                Hébergement & Mises à jour<br>illimitées
+                            </p>
+                        </div>
+                        
+                        <!-- Divider -->
+                        <div class="offer-plus-divider">+</div>
+                        
+                        <!-- Part 2: Creation -->
+                        <div class="offer-part">
+                            <span class="offer-label">La Création</span>
+                            <div class="offer-price" style="font-size: 2rem;">Sur Mesure</div>
+                            <p class="offer-text">
+                                Design personnalisé<br><span style="color: var(--sienna); font-weight: 600;">Devis Offert</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 48px;">
+                        <a href="https://cal.com/benjamin-poulet-deo6zz/15min" class="btn btn-primary btn-lg">
+                            Bloquer mon créneau
+                        </a>
+                        <p style="margin-top: 24px; font-size: 1rem; color: var(--anthracite); font-weight: 500;">
+                            ✨ Rentabilité immédiate : Moins cher qu'une seule nuit perdue à cause d'un mauvais avis.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FAQ ==================== -->
+    <section class="faq-section" id="faq" style="padding: 40px 0 120px; background: var(--cream);">
+        <div class="container" style="max-width: 900px;">
+            <div class="section-header fade-up" style="margin-bottom: 60px;">
+                <h2 class="section-title">Questions Fréquentes</h2>
+                <p class="section-subtitle">Tout ce qu'il faut savoir pour se lancer sereinement.</p>
+            </div>
+
+            <div class="faq-container fade-up delay-100">
+                <!-- Question 1 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Mon classeur papier fonctionne très bien, pourquoi changer ? 🤔</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Techniquement, oui. Mais soyons honnêtes : combien de fois avez-vous répondu aux mêmes questions cette année ? Le code WiFi, le jacuzzi, le check-out...<br><br>
+                        Votre classeur reflète-t-il vraiment le standing de votre lieu ? Vous avez investi dans la déco — votre livret d'accueil mérite le même soin.<br>
+                        <strong>Un guide digital, c'est l'expérience 5 étoiles qui commence avant même l'arrivée.</strong></p>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Mes voyageurs lisent mon livret, ça suffit non ? 📖</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Vraiment ? Alors pourquoi recevez-vous encore des SMS à 23h ?<br>
+                        Réalité : 95% des voyageurs consultent un guide digital (sur leur téléphone, avant d'arriver) contre 20% pour un classeur papier.<br>
+                        L'info est accessible <strong>au bon moment</strong>, pas quand ils sont déjà perdus.</p>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Je n'ai qu'un seul bien, c'est utile pour moi ? 🏡</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>C'est justement <strong>pour vous</strong>. Les usines à touristes ont d'autres outils.<br>
+                        Ohana Guide est pensé pour les propriétaires passionnés qui veulent offrir un accueil exceptionnel sans y passer leurs soirées.<br>
+                        <strong>Un bien unique mérite une attention unique.</strong></p>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Je n'ai pas le temps de configurer un nouvel outil ⏳</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Parfait — <strong>vous n'aurez rien à faire</strong>.<br>
+                        On échange 20 min, vous m'envoyez vos infos, je crée tout. Vous validez, c'est en ligne.<br>
+                        C'est du <strong>clé en main absolu</strong>, pas du bricolage.</p>
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Et si je veux modifier une info après ? ✏️</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>C'est fait en <strong>30 secondes</strong>. Code WiFi, resto fermé... Vous modifiez (ou je le fais), et c'est instantanément à jour pour tous les voyageurs.<br>
+                        Fini les réimpressions et les PDF obsolètes.</p>
+                    </div>
+                </div>
+
+                <!-- Question 6 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>C'est cher, il y a des solutions gratuites... 💸</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Oui, il y a du gratuit. C'est générique, moche, et rempli de pubs.<br>
+                        Pour <strong>12€/mois</strong> (moins qu'un café par semaine), vous protégez vos avis 5 étoiles et vous libérez votre temps.<br>
+                        <strong>Un seul avis négatif évité rembourse l'année.</strong> Votre bien d'exception mérite mieux que du gratuit.</p>
+                    </div>
+                </div>
+
+                <!-- Question 7 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Pourquoi payer la création en plus ? 🎨</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>L'abonnement couvre la technique. La création, c'est <strong>mon expertise</strong> : designer une interface unique, structurer vos infos, sublimer vos photos.<br>
+                        Ce n'est pas un template vide. C'est un travail d'artisan numérique sur mesure.</p>
+                    </div>
+                </div>
+
+                <!-- Question 8 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Pourquoi vous plutôt que StyQR ou autres ? 🏆</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Eux font du prêt-à-porter (templates, DIY, support chatbot).<br>
+                        Moi je fais de la <strong>Haute Couture</strong> : Design unique, gestion clé en main, ligne directe avec moi (Benjamin).<br>
+                        Je suis moi-même Superhost, je connais vos problèmes mieux que n'importe quelle startup.</p>
+                    </div>
+                </div>
+
+                 <!-- Question 9 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Et si la tablette est volée ? 📱</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>C'est extrêmement rare. Mais je recommande une tablette entrée de gamme (~150€) sur support mural sécurisé.<br>
+                        De toute façon, le guide est accessible sur <strong>Smartphone</strong> (QR Code), la tablette n'est qu'un bonus "Wahou".</p>
+                    </div>
+                </div>
+
+                 <!-- Question 10 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Combien de temps pour l'avoir ? 🚀</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Comptez <strong>5 à 10 jours</strong>. Appel découverte -> Envoi des infos -> Création -> Validation.<br>
+                        C'est très rapide car je m'occupe de tout.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container footer-inner">
+            <span class="footer-brand">Ohana Guide</span>
+            
+            <nav class="footer-links">
+                <a href="#">Mentions légales</a>
+                <a href="#">Politique de confidentialité</a>
+                <a href="mailto:contact@ohanaguide.fr">Contact</a>
+            </nav>
+            
+            <span class="footer-copy">© 2024 Ohana Guide. Tous droits réservés.</span>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky CTA (hidden by default, shown via JS) -->
+    <div class="mobile-sticky-cta" id="mobileStickyCtaBar">
+        <a href="https://cal.com/benjamin-poulet-deo6zz/15min" class="mobile-sticky-cta-btn">
+            Réserver un appel gratuit
+        </a>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js" defer></script>
+</body>
+</html>
