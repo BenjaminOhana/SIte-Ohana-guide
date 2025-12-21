@@ -3306,10 +3306,12 @@ img {
         box-shadow: 0 2px 8px rgba(184, 92, 56, 0.2);
     }
 }
+
 /* === MOBILE VIDEO MODAL FIX === */
 @media (max-width: 767px) {
     .video-modal {
-        z-index: 99999 !important; /* Force top */
+        z-index: 99999 !important;
+        /* Force top */
     }
 
     .modal-content {
@@ -3325,8 +3327,10 @@ img {
     .video-wrapper {
         width: 100% !important;
         height: auto !important;
-        min-height: 250px; /* Prevent collapse */
-        padding-bottom: 0 !important; /* Remove iframe hack */
+        min-height: 250px;
+        /* Prevent collapse */
+        padding-bottom: 0 !important;
+        /* Remove iframe hack */
         display: block !important;
         position: relative !important;
     }
@@ -3347,7 +3351,7 @@ img {
         align-items: center !important;
         justify-content: center !important;
     }
-    
+
     .modal-content {
         height: auto !important;
         min-height: 200px !important;
@@ -3355,7 +3359,8 @@ img {
         margin: 0 !important;
         padding: 0 !important;
         background: #000 !important;
-        display: block !important; /* Fix potential flex collapse */
+        display: block !important;
+        /* Fix potential flex collapse */
     }
 
     .video-wrapper {
@@ -3365,7 +3370,6 @@ img {
         padding-bottom: 0 !important;
         z-index: 100000 !important;
         display: block !important;
-        background: orange !important; /* DEBUG COLOR to see if wrapper exists */
     }
 
     .video-wrapper video {
