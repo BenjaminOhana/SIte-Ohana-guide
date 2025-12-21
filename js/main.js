@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (iframe) {
                 // Auto-play when opening
-                iframe.src = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&rel=0&modestbranding=1&showinfo=0`;
+                iframe.src = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&rel=0`;
             }
         });
 
