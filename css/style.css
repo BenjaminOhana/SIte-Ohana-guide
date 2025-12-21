@@ -2074,10 +2074,8 @@ img {
 
 .story-photo {
     width: 100%;
-    height: 100%;
-    /* Fill container */
-    max-height: 600px;
-    /* Limit height */
+    height: auto;
+    /* max-height removed to allow natural size */
     object-fit: cover;
     object-position: center 35%;
     /* Same improved focus as mobile */
@@ -2898,8 +2896,7 @@ img {
 
     .story-image-wrapper {
         border-radius: 16px;
-        max-height: 420px;
-        /* Taller to show more */
+        /* max-height removed for mobile as well */
         overflow: hidden;
     }
 
