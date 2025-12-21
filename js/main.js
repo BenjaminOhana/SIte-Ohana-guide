@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const iframe = document.getElementById('demoVideo');
 
     // ⚠️ REPLACE THIS WITH YOUR ACTUAL YOUTUBE VIDEO ID
-    const YOUTUBE_VIDEO_ID = 'dQw4w9WgXcQ'; // Example ID
+    const YOUTUBE_VIDEO_ID = '9pEV35mz1us'; // Ohana Guide Demo Short
 
     if (openBtn && modal) {
         openBtn.addEventListener('click', () => {
