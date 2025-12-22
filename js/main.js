@@ -124,29 +124,47 @@ document.addEventListener('DOMContentLoaded', () => {
         gsap.from(header, {
             scrollTrigger: {
                 trigger: header,
-                start: 'top 80%',
-                toggleActions: 'play none none reverse'
+                start: 'top 85%',
+                toggleActions: 'play none none none' // Once and stay
             },
             opacity: 0,
-            y: 30,
-            duration: 0.8,
-            ease: 'power2.out'
+            y: 20, // Subtle movement
+            duration: 1.0, // Slower, more elegant
+            ease: 'power3.out'
         });
     });
+
+
 
     // Feature Cards Animations
     gsap.utils.toArray('.feature-card').forEach((card, index) => {
         gsap.from(card, {
             scrollTrigger: {
                 trigger: card,
-                start: 'top 85%',
-                toggleActions: 'play none none reverse'
+                start: 'top 90%',
+                toggleActions: 'play none none none'
             },
             opacity: 0,
-            y: 40,
-            duration: 0.6,
-            delay: index * 0.1,
-            ease: 'power2.out'
+            y: 24, // 24px grid alignment
+            duration: 0.8,
+            delay: index * 0.1, // Keep stagger
+            ease: 'power3.out'
+        });
+    });
+
+    // Pain Points Animations (Apple Style)
+    gsap.utils.toArray('.pain-item').forEach((item, index) => {
+        gsap.from(item, {
+            scrollTrigger: {
+                trigger: item,
+                start: 'top 85%', // Appear slightly later for drama
+                toggleActions: 'play none none none'
+            },
+            opacity: 0,
+            y: 20, // Very subtle lift
+            duration: 0.9, // Smooth entry
+            delay: index * 0.1, // Staggered ripple
+            ease: 'power3.out'
         });
     });
 
@@ -156,14 +174,14 @@ document.addEventListener('DOMContentLoaded', () => {
             scrollTrigger: {
                 trigger: card,
                 start: 'top 85%',
-                toggleActions: 'play none none reverse'
+                toggleActions: 'play none none none'
             },
             opacity: 0,
-            y: 50,
-            scale: 0.95,
-            duration: 0.7,
-            delay: index * 0.15,
-            ease: 'power2.out'
+            y: 24,
+            scale: 0.98, // Very subtle scale
+            duration: 0.8,
+            delay: index * 0.1,
+            ease: 'power3.out'
         });
     });
 

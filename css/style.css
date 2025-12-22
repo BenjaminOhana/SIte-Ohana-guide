@@ -3231,6 +3231,15 @@ img {
         /* Reduced from -4px/-5px/-8px */
     }
 
+    /* Force hardware acceleration for smooth 60fps */
+    .fade-up,
+    .feature-card,
+    .pricing-card,
+    .pain-item,
+    .section-header {
+        will-change: transform, opacity;
+    }
+
     /* Disable parallax for iOS compatibility */
     .demo-section {
         background-attachment: scroll !important;
