@@ -188,7 +188,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    document.querySelectorAll('.fade-up').forEach(el => {
+    // Exclude elements that are already handled by GSAP (feature-card, pricing-card, pain-item, etc.)
+    // This prevents double-animation fighting
+    document.querySelectorAll('.fade-up:not(.feature-card):not(.pain-item):not(.testimonial-card)').forEach(el => {
         observer.observe(el);
     });
 
@@ -283,54 +285,45 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     // Mobile Sticky CTA - Smart Show/Hide
     // ==========================================
+    // ==========================================
+    // Mobile Sticky CTA - Optimized with IntersectionObserver
+    // ==========================================
     const mobileStickyCtaBar = document.getElementById('mobileStickyCtaBar');
 
     if (mobileStickyCtaBar && window.innerWidth <= 767) {
         const hero = document.getElementById('hero');
         const footer = document.querySelector('footer');
-        // Select all potential main CTAs to avoid clutter
-        const ctas = document.querySelectorAll('.hero-cta, .offer-section .btn-primary, .story-section .btn-outline, .mobile-menu-cta');
 
-        const checkVisibility = () => {
-            // 1. Check if we are past hero (show only after hero)
-            const heroBottom = hero ? hero.getBoundingClientRect().bottom : 0;
-            if (heroBottom > 0) {
-                mobileStickyCtaBar.classList.remove('visible');
-                return;
-            }
+        // We'll track visibility of Hero and Footer
+        let isHeroVisible = true;
+        let isFooterVisible = false;
 
-            // 2. Check if footer is visible (hide if overlapping footer)
-            if (footer) {
-                const footerTop = footer.getBoundingClientRect().top;
-                // Hide if footer is entering the viewport (with a small buffer)
-                if (footerTop < window.innerHeight) {
-                    mobileStickyCtaBar.classList.remove('visible');
-                    return;
-                }
-            }
-
-            // 3. Check if any other Main CTA is visible in the viewport
-            let ctaVisible = false;
-            ctas.forEach(cta => {
-                const rect = cta.getBoundingClientRect();
-                // Check if element is in viewport
-                if (rect.top < window.innerHeight && rect.bottom > 0) {
-                    ctaVisible = true;
-                }
-            });
-
-            if (ctaVisible) {
-                mobileStickyCtaBar.classList.remove('visible');
-            } else {
+        const updateCtaVisibility = () => {
+            // Show CTA only if Hero is NOT visible AND Footer is NOT visible
+            // AND we are not at the very top (scrolled past hero)
+            if (!isHeroVisible && !isFooterVisible) {
                 mobileStickyCtaBar.classList.add('visible');
+            } else {
+                mobileStickyCtaBar.classList.remove('visible');
             }
         };
 
-        // Check on scroll (passive for performance)
-        window.addEventListener('scroll', checkVisibility, { passive: true });
+        const stickyObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.target.id === 'hero') {
+                    isHeroVisible = entry.isIntersecting;
+                } else if (entry.target.tagName === 'FOOTER') {
+                    isFooterVisible = entry.isIntersecting;
+                }
+            });
+            updateCtaVisibility();
+        }, {
+            root: null,
+            threshold: 0 // Trigger as soon as 1px is visible/hidden
+        });
 
-        // Initial check in case we load in middle of page
-        checkVisibility();
+        if (hero) stickyObserver.observe(hero);
+        if (footer) stickyObserver.observe(footer);
     }
 
     console.log('✅ GuideBnB initialized successfully');

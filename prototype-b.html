@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype B - Text Minimal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Raleway', sans-serif; background: #FAF8F5; }
+        
+        /* Pain points placeholder */
+        .pain-section {
+            padding: 80px 24px;
+            text-align: center;
+            background: #FAF8F5;
+        }
+        .pain-section h2 {
+            font-size: 1.5rem;
+            color: #1D1D1F;
+            margin-bottom: 16px;
+        }
+        .pain-section p { color: #666; }
+        
+        /* OPTION B: Text-only Minimal (Apple-style) */
+        .respirez-minimal {
+            padding: 120px 24px 100px;
+            text-align: center;
+            background: #FAF8F5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 60vh;
+        }
+        
+        .respirez-minimal .respirez-title {
+            font-family: 'Sen', sans-serif;
+            font-size: clamp(4rem, 12vw, 8rem);
+            color: #1D1D1F;
+            font-weight: 400;
+            letter-spacing: -0.04em;
+            margin-bottom: 32px;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .respirez-minimal .respirez-sub {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            color: #52525B;
+            max-width: 550px;
+            text-align: center;
+            line-height: 1.7;
+            font-weight: 500;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+        
+        .respirez-minimal .arrow {
+            margin-top: 48px;
+            font-size: 2.5rem;
+            color: #B94A2F;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(12px); }
+        }
+        
+        /* Features placeholder */
+        .features-section {
+            padding: 80px 24px;
+            text-align: center;
+            background: #FAF8F5;
+        }
+        .features-section h2 {
+            font-size: 2rem;
+            color: #B94A2F;
+            margin-bottom: 16px;
+        }
+        .features-section p { color: #666; max-width: 500px; margin: 0 auto; }
+    </style>
+</head>
+<body>
+    <!-- Pain points placeholder -->
+    <section class="pain-section">
+        <h2>← Section Pain Points au-dessus</h2>
+        <p>Scroll down pour voir la transition "Respirez"</p>
+    </section>
+    
+    <!-- OPTION B: Text-only Minimal -->
+    <section class="respirez-minimal">
+        <h2 class="respirez-title">Respirez...</h2>
+        <p class="respirez-sub">Il existe une façon plus simple et plus premium d'accueillir vos voyageurs.</p>
+        <div class="arrow">↓</div>
+    </section>
+    
+    <!-- Features placeholder -->
+    <section class="features-section">
+        <h2>Ohana Guide</h2>
+        <p>Sublimez leur séjour. Libérez votre temps.</p>
+    </section>
+</body>
+</html>

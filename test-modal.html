@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Modal Video</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: #FAF8F5; font-family: sans-serif; padding: 50px 20px; }
+        
+        .open-btn {
+            background: #B94A2F;
+            color: white;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        /* MODAL - Simplified */
+        .video-modal {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 9999;
+            display: none; /* Hidden by default */
+            align-items: center;
+            justify-content: center;
+        }
+        .video-modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            position: relative;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: -40px; right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test Modal Video Mobile</h1>
+    <p style="margin: 20px 0;">Clique sur le bouton pour ouvrir le modal avec la vidéo.</p>
+    
+    <button class="open-btn" id="openBtn">▶ Ouvrir la démo</button>
+
+    <!-- MODAL -->
+    <div class="video-modal" id="modal">
+        <div class="modal-content">
+            <button class="close-btn" id="closeBtn">×</button>
+            <video id="video" controls playsinline muted preload="auto">
+                <source src="assets/video/demo.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('modal');
+        const openBtn = document.getElementById('openBtn');
+        const closeBtn = document.getElementById('closeBtn');
+        const video = document.getElementById('video');
+
+        openBtn.addEventListener('click', () => {
+            modal.classList.add('active');
+            video.currentTime = 0;
+            video.play().catch(e => console.log('Autoplay blocked:', e));
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+            video.pause();
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                video.pause();
+            }
+        });
+
+        // Unmute on first tap
+        video.addEventListener('click', () => {
+            video.muted = false;
+        });
+    </script>
+</body>
+</html>

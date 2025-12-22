@@ -5,22 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags -->
-    <title>Ohana Guide | Le guide interactif pour hôtes Airbnb</title>
-    <meta name="description" content="Transformez votre location en expérience 5 étoiles. Le guide interactif sur mesure pour vos invités.">
+    <title>Ohana Guide | Création de Livrets d'Accueil Sur-Mesure & Luxe</title>
+    <meta name="description" content="Studio de création de livrets d'accueil digitaux sur-mesure pour villas & locations de luxe. Design expert & accompagnement inclus.">
     <meta name="robots" content="index, follow">
     
     <!-- Canonical -->
     <link rel="canonical" href="https://ohanaguide.fr/">
+
+    <!-- JSON-LD Structured Data (AEO - Studio Design) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://ohanaguide.fr/#studio",
+          "name": "Ohana Guide Studio",
+          "image": "https://ohanaguide.fr/assets/images/benjamin-portrait.png",
+          "priceRange": "€€",
+          "description": "Studio de création digitale pour l'hospitalité de luxe. Conception sur-mesure de livrets d'accueil pour villas et propriétés d'exception.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "FR"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Services de Design Digital",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Création & Configuration Sur-Mesure",
+                  "description": "Design complet de l'interface, intégration du contenu et configuration technique."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Product",
+                  "name": "Abonnement Sérénité",
+                  "description": "Hébergement haute performance et mises à jour illimitées."
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Est-ce une application ou un service ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ohana Guide est un service de création clé en main. Nous ne vous livrons pas un outil vide à configurer vous-même : nous designons et configurons entièrement votre livret d'accueil digital pour garantir un résultat professionnel."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
     
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ohanaguide.fr/">
-    <meta property="og:title" content="Ohana Guide | Le guide interactif pour hôtes Airbnb">
-    <meta property="og:description" content="Transformez votre location en expérience 5 étoiles. Le guide interactif qui répond à vos invités 24h/24.">
+    <meta property="og:title" content="Ohana Guide | Création de Livrets d'Accueil Sur-Mesure & Luxe">
+    <meta property="og:description" content="Studio de création de livrets d'accueil digitaux sur-mesure pour villas & locations de luxe. Design expert & accompagnement inclus.">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ohana Guide | Le guide interactif pour hôtes Airbnb">
+    <meta name="twitter:title" content="Ohana Guide | Création de Livrets d'Accueil Sur-Mesure & Luxe">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,6 +89,9 @@
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    
+    <!-- Preload LCP Image -->
+    <link rel="preload" as="image" href="assets/images/hero-bg-final.png">
 </head>
 <body>
 
@@ -82,15 +141,26 @@
             
             <div class="hero-cta fade-up">
                 <a href="#pricing" class="btn btn-primary btn-lg">
-                    Commencer maintenant
+                    Créer mon Guide
                 </a>
             </div>
+            
+            <p class="hero-note fade-up" style="margin-top: 16px; font-size: 0.9rem; font-weight: 500; font-family: var(--font-heading);">
+                ✨ Accompagnement & Design inclus
+            </p>
         </div>
         
         <div class="scroll-indicator">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
             </svg>
+        </div>
+
+        <!-- Desktop QR Code (Aha! Moment) -->
+        <div class="desktop-demo-qr">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=https://ohanaguide.fr" alt="Flash pour tester" class="qr-code-img">
+            <span class="qr-label">Testez l'Expérience</span>
+            <span class="qr-sub">Scannez avec votre mobile</span>
         </div>
     </section>
 
@@ -102,7 +172,7 @@
             </h2>
             
             <div class="pain-grid">
-                <!-- Item 1: Phone -->
+                <!-- Item 1: Repetitive Questions -->
                 <div class="pain-item fade-up stagger-1">
                     <div class="pain-icon">
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
@@ -111,35 +181,19 @@
                         <strong>"Je répète toujours les mêmes choses"</strong> — WiFi, parking, code porte, machine à café…
                     </p>
                 </div>
+
                 <!-- Item 2: Binder -->
                 <div class="pain-item fade-up stagger-2">
                     <div class="pain-icon">
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
                     </div>
                     <p class="pain-text">
-                        <strong>"Mon classeur papier fait cheap"</strong> — il jure avec le standing du lieu.
+                        <strong>"Mon classeur papier fait cheap"</strong> — il contraste avec le standing du lieu.
                     </p>
                 </div>
-                <!-- Item 3: File/PDF -->
+
+                <!-- Item 3: Bad Reviews (Star) -->
                 <div class="pain-item fade-up stagger-3">
-                    <div class="pain-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                    </div>
-                    <p class="pain-text">
-                        <strong>"Mon PDF, personne ne le lit"</strong> — et les infos sont éparpillées.
-                    </p>
-                </div>
-                <!-- Item 4: Clock -->
-                <div class="pain-item fade-up stagger-4">
-                    <div class="pain-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    </div>
-                    <p class="pain-text">
-                        <strong>"Un voyageur m'a appelé à 23h"</strong> — pour une info qui était déjà dans le livret.
-                    </p>
-                </div>
-                <!-- Item 5: Trending Down/Star -->
-                <div class="pain-item fade-up stagger-5">
                     <div class="pain-icon">
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
                     </div>
@@ -147,8 +201,9 @@
                         <strong>"J'ai peur du mauvais avis"</strong> — un 4★ - perte de revenus et de visibilité.
                     </p>
                 </div>
-                <!-- Item 6: Impersonal/Users -->
-                <div class="pain-item fade-up stagger-6">
+
+                <!-- Item 4: Impersonal -->
+                <div class="pain-item fade-up stagger-4">
                     <div class="pain-icon">
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><line x1="23" y1="11" x2="17" y2="11"></line></svg>
                     </div>

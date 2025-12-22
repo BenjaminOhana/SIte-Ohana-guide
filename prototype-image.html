@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype Image - Parallax vs Reveal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Raleway', sans-serif; background: #FAF8F5; }
+        
+        /* Placeholder sections for scroll */
+        .placeholder {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #FAF8F5;
+            border-bottom: 1px solid #eee;
+        }
+        .placeholder h2 { color: #666; font-size: 1.5rem; }
+        
+        /* Section title */
+        .section-label {
+            text-align: center;
+            padding: 40px 20px 20px;
+            font-size: 1.5rem;
+            color: #B94A2F;
+            font-weight: 600;
+        }
+        
+        /* =============================================
+           OPTION 1: PARALLAX
+           ============================================= */
+        .parallax-section {
+            position: relative;
+            height: 70vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .parallax-image {
+            position: absolute;
+            top: -20%;
+            left: 0;
+            width: 100%;
+            height: 140%;
+            object-fit: cover;
+            will-change: transform;
+        }
+        
+        .parallax-overlay {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+        }
+        
+        .parallax-overlay h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 16px;
+        }
+        
+        /* =============================================
+           OPTION 2: REVEAL (Fade + Slide)
+           ============================================= */
+        .reveal-section {
+            padding: 80px 24px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .reveal-image-wrapper {
+            position: relative;
+            max-width: 600px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+        
+        .reveal-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            opacity: 0;
+            transform: translateY(60px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .reveal-image.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Divider */
+        .divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, #ddd, transparent);
+            margin: 40px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll down indicator -->
+    <div class="placeholder">
+        <h2>⬇️ Scrolle pour voir les deux options</h2>
+    </div>
+    
+    <!-- =============================================
+         OPTION 1: PARALLAX
+         ============================================= -->
+    <h3 class="section-label">🌊 Option 1 — Parallax</h3>
+    <section class="parallax-section">
+        <img src="assets/images/suite-luxe.jpg" alt="Suite Luxe" class="parallax-image" id="parallaxImg">
+        <div class="parallax-overlay">
+            <h2>C'est pour vous si...</h2>
+        </div>
+    </section>
+    
+    <div class="divider"></div>
+    
+    <!-- =============================================
+         OPTION 2: REVEAL (Fade + Slide)
+         ============================================= -->
+    <h3 class="section-label">✨ Option 2 — Reveal au Scroll</h3>
+    <section class="reveal-section">
+        <div class="reveal-image-wrapper">
+            <img src="assets/images/suite-luxe.jpg" alt="Suite Luxe" class="reveal-image" id="revealImg">
+        </div>
+    </section>
+    
+    <div class="placeholder">
+        <h2>Fin des prototypes</h2>
+    </div>
+    
+    <script>
+        // OPTION 1: Parallax Effect
+        const parallaxImg = document.getElementById('parallaxImg');
+        
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const section = parallaxImg.parentElement;
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            
+            // Only apply when section is in view
+            if (scrolled > sectionTop - window.innerHeight && scrolled < sectionTop + sectionHeight) {
+                const yPos = (scrolled - sectionTop) * 0.4;
+                parallaxImg.style.transform = `translateY(${yPos}px)`;
+            }
+        }, { passive: true });
+        
+        // OPTION 2: Reveal on Scroll
+        const revealImg = document.getElementById('revealImg');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+        
+        observer.observe(revealImg);
+    </script>
+</body>
+</html>
