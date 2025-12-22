@@ -28,7 +28,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Sen:wght@400..800&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css?v=3">
+    <link rel="stylesheet" href="css/style.css?v=1000">
     
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
@@ -158,12 +158,11 @@
                 </div>
             </div>
 
-            <div class="pain-transition fade-up">
-                <span class="respirez-title">Respirez...</span>
-                <p class="transition-sub">
-                    Il existe une façon plus simple et plus premium d'accueillir vos voyageurs.
-                </p>
-                <div class="transition-arrow">↓</div>
+            <!-- Respirez Transition (Option B - Minimal) -->
+            <div class="respirez-minimal fade-up">
+                <h2 class="respirez-title">Respirez...</h2>
+                <p class="respirez-sub">Il existe une façon plus simple et plus premium d'accueillir vos voyageurs.</p>
+                <div class="respirez-arrow">↓</div>
             </div>
         </div>
     </section>
@@ -356,8 +355,12 @@
                 <!-- Right Column: Image -->
                 <!-- Image Column (Right/Bottom) -->
                 <div class="target-image-column fade-up stagger-3">
-                     <div class="target-image-wrapper">
-                        <img src="assets/images/suite-luxe.jpg" alt="Intérieur Suite Luxe Airbnb" class="target-real-photo">
+                      <div class="target-image-wrapper">
+                        <!-- WebP Source with fallback -->
+                        <picture>
+                            <source srcset="assets/images/suite-luxe.webp" type="image/webp">
+                            <img src="assets/images/suite-luxe.jpg?v=2" alt="Intérieur Suite Luxe Airbnb" class="target-real-photo">
+                        </picture>
                     </div>
                 </div>
             </div>
@@ -389,7 +392,7 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
             </button>
             <div class="video-wrapper">
-                <video id="demoVideo" controls playsinline preload="auto">
+                <video id="demoVideo" controls playsinline muted>
                     <source src="assets/video/demo.mp4" type="video/mp4">
                     Votre navigateur ne supporte pas la vidéo.
                 </video>
@@ -465,24 +468,27 @@
         <div class="container">
             <div class="story-split">
                 <div class="story-content fade-up">
-                    <span class="story-subtitle">L'Histoire</span>
-                    <h2 class="story-title">Derrière Ohana Guide, il y a un hôte. Comme vous.</h2>
+                    <h2 class="story-title">Derrière Guide Ohana, il y a un <span class="text-sienna">hôte</span>. Comme vous.</h2>
                     
                     <div class="story-text">
                         <p>
-                            Je m'appelle Benjamin, je suis propriétaire Airbnb et entrepreneur. 
-                            Les SMS à 23h, les questions répétitives… je suis passé par là.
+                            Je m'appelle Benjamin. J'ai un Airbnb <strong>ambiance Bali</strong>. En Lorraine, oui.
                         </p>
                         <p>
-                            J'ai créé Ohana Guide pour y répondre : un livret digital élégant qui gère l'accueil de vos voyageurs à votre place.
+                            J'ai passé des mois à créer un lieu où <strong>chaque détail compte</strong>. La lumière, les textures, les senteurs. Alors quand mes voyageurs arrivaient et tombaient sur un <strong>classeur plastifié</strong> posé sur la table… ça cassait tout.
+                        </p>
+                        <p>
+                            J'ai voulu créer un <strong>accueil à la hauteur du lieu</strong>. Un guide aussi soigné que la déco. Une expérience qui prolonge l'émotion dès la première seconde.
+                        </p>
+                        <p>
+                            Alors je l'ai codé. <strong>Sur mesure. Beau.</strong> Pensé pour <strong>impressionner</strong>, pas juste pour informer.
                         </p>
                         <p style="font-weight: 600; color: var(--anthracite); margin-bottom: 40px;">
-                            Résultat : une expérience 5 étoiles pour eux. Et du temps retrouvé pour vous.
+                            Depuis, mes voyageurs ne disent plus "c'était bien". Ils disent <strong>"c'était incroyable"</strong>.
                         </p>
                         
                         <div style="margin-top: 32px;">
-                            <span style="display: block; font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--sienna); font-style: italic; margin-bottom: 4px;">Benjamin</span>
-                            <span style="display: block; font-size: 0.9rem; color: var(--zinc); font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;">Fondateur Ohana Guide</span>
+                            <span style="display: block; font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--sienna); margin-bottom: 8px;">Benjamin</span>
                         </div>
 
                         <div style="margin-top: 32px;">
@@ -769,7 +775,7 @@
             <span class="footer-brand">Ohana Guide</span>
             
             <nav class="footer-links">
-                <a href="#">Mentions légales</a>
+                <a href="mentions.html">Mentions légales</a>
                 <a href="#">Politique de confidentialité</a>
                 <a href="mailto:contact@ohanaguide.fr">Contact</a>
             </nav>
@@ -786,6 +792,6 @@
     </div>
 
     <!-- JavaScript -->
-    <script src="js/main.js" defer></script>
+    <script src="js/main.js?v=220" defer></script>
 </body>
 </html>

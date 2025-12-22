@@ -31,15 +31,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenu = document.getElementById('mobileMenu');
 
     if (mobileToggle && mobileMenu) {
-        mobileToggle.addEventListener('click', () => {
+        // Toggle menu
+        mobileToggle.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent document click from closing immediately
             mobileMenu.classList.toggle('active');
+            mobileToggle.classList.toggle('active'); // Animate hamburger if needed
         });
 
         // Close menu when clicking a link
         mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.remove('active');
+                mobileToggle.classList.remove('active');
             });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (mobileMenu.classList.contains('active') &&
+                !mobileMenu.contains(e.target) &&
+                !mobileToggle.contains(e.target)) {
+                mobileMenu.classList.remove('active');
+                mobileToggle.classList.remove('active');
+            }
         });
     }
 
@@ -48,8 +62,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            // Guard against empty '#' which would crash querySelector
+            if (!href || href === '#') {
+                e.preventDefault();
+                return;
+            }
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const target = document.querySelector(href);
             if (target) {
                 target.scrollIntoView({
                     behavior: 'smooth',
@@ -147,18 +167,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // CTA Card Animation
-    gsap.from('.cta-card', {
-        scrollTrigger: {
-            trigger: '.cta-card',
-            start: 'top 80%',
-            toggleActions: 'play none none reverse'
-        },
-        opacity: 0,
-        y: 40,
-        duration: 0.8,
-        ease: 'power2.out'
-    });
+    // CTA Card Animation - Removed to fix GSAP warning
+    // .cta-card no longer exists in DOM
 
     // ==========================================
     // Intersection Observer for CSS Animations
@@ -276,44 +286,51 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileStickyCtaBar = document.getElementById('mobileStickyCtaBar');
 
     if (mobileStickyCtaBar && window.innerWidth <= 767) {
-        // Elements that contain CTAs - when visible, hide the sticky bar
-        const ctaElements = document.querySelectorAll('.hero-cta, .offer-section .btn-primary, .story-section .btn-outline, .mobile-menu-cta');
-        const heroSection = document.getElementById('hero');
+        const hero = document.getElementById('hero');
+        const footer = document.querySelector('footer');
+        // Select all potential main CTAs to avoid clutter
+        const ctas = document.querySelectorAll('.hero-cta, .offer-section .btn-primary, .story-section .btn-outline, .mobile-menu-cta');
 
-        let hasScrolledPastHero = false;
-        let anyCtaVisible = false;
-
-        // Observer for CTA visibility
-        const ctaObserver = new IntersectionObserver((entries) => {
-            anyCtaVisible = entries.some(entry => entry.isIntersecting);
-            updateStickyVisibility();
-        }, { threshold: 0.3 });
-
-        // Observer for hero section (only show after scrolling past hero)
-        const heroObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                hasScrolledPastHero = !entry.isIntersecting;
-                updateStickyVisibility();
-            });
-        }, { threshold: 0 });
-
-        function updateStickyVisibility() {
-            if (hasScrolledPastHero && !anyCtaVisible) {
-                mobileStickyCtaBar.classList.add('visible');
-                mobileStickyCtaBar.classList.remove('hidden');
-            } else {
+        const checkVisibility = () => {
+            // 1. Check if we are past hero (show only after hero)
+            const heroBottom = hero ? hero.getBoundingClientRect().bottom : 0;
+            if (heroBottom > 0) {
                 mobileStickyCtaBar.classList.remove('visible');
-                mobileStickyCtaBar.classList.add('hidden');
+                return;
             }
-        }
 
-        // Observe all CTAs
-        ctaElements.forEach(cta => ctaObserver.observe(cta));
+            // 2. Check if footer is visible (hide if overlapping footer)
+            if (footer) {
+                const footerTop = footer.getBoundingClientRect().top;
+                // Hide if footer is entering the viewport (with a small buffer)
+                if (footerTop < window.innerHeight) {
+                    mobileStickyCtaBar.classList.remove('visible');
+                    return;
+                }
+            }
 
-        // Observe hero section
-        if (heroSection) {
-            heroObserver.observe(heroSection);
-        }
+            // 3. Check if any other Main CTA is visible in the viewport
+            let ctaVisible = false;
+            ctas.forEach(cta => {
+                const rect = cta.getBoundingClientRect();
+                // Check if element is in viewport
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    ctaVisible = true;
+                }
+            });
+
+            if (ctaVisible) {
+                mobileStickyCtaBar.classList.remove('visible');
+            } else {
+                mobileStickyCtaBar.classList.add('visible');
+            }
+        };
+
+        // Check on scroll (passive for performance)
+        window.addEventListener('scroll', checkVisibility, { passive: true });
+
+        // Initial check in case we load in middle of page
+        checkVisibility();
     }
 
     console.log('✅ GuideBnB initialized successfully');
