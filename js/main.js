@@ -12,6 +12,32 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.registerPlugin(ScrollTrigger);
 
     // ==========================================
+    // HERO HEIGHT FIX (Mobile 'Dezoom' / Jump)
+    // ==========================================
+    const hero = document.querySelector('.hero');
+    let lastWidth = window.innerWidth;
+
+    const setHeroHeight = () => {
+        // Fix the height to the initial viewport height (ignoring address bar resize)
+        if (hero) {
+            hero.style.minHeight = `${window.innerHeight}px`;
+        }
+    };
+
+    // Initial set
+    setHeroHeight();
+
+    // Smart Resize (Only update height if width changes - ignores address bar toggle)
+    window.addEventListener('resize', () => {
+        const currentWidth = window.innerWidth;
+        if (currentWidth !== lastWidth) {
+            lastWidth = currentWidth;
+            setHeroHeight();
+            ScrollTrigger.refresh(); // Refresh scroll positions on true resize
+        }
+    });
+
+    // ==========================================
     // Header Scroll Effect
     // ==========================================
     const header = document.getElementById('header');

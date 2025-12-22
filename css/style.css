@@ -1046,12 +1046,14 @@ img {
     gap: 24px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.8);
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease;
+    /* Removed transform to fix GSAP conflict */
     height: 100%;
 }
 
 .pain-item:hover {
     transform: translateY(-8px);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
@@ -1332,11 +1334,13 @@ img {
     /* Editorial Style: No card, just content */
     padding: 24px 0;
     /* Slightly more breathing room */
-    transition: transform var(--transition-base);
+    transition: none;
+    /* Removed base transform transition for GSAP */
 }
 
 .feature-card:hover {
     transform: translateY(-4px);
+    transition: transform var(--transition-base);
 }
 
 .feature-icon {
@@ -1849,13 +1853,14 @@ img {
     padding: 40px 32px;
     display: flex;
     flex-direction: column;
-    transition: all var(--transition-base);
+    /* transition: all var(--transition-base); REMOVED for GSAP */
     position: relative;
 }
 
 .pricing-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-xl);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
 .pricing-card.featured {
