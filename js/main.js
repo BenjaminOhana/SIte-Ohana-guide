@@ -12,6 +12,14 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.registerPlugin(ScrollTrigger);
 
     // ==========================================
+    // Scroll to Top on Page Load/Refresh
+    // ==========================================
+    window.scrollTo(0, 0);
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+
+    // ==========================================
     // HERO HEIGHT FIX (Mobile 'Dezoom' / Jump)
     // ==========================================
     const hero = document.querySelector('.hero');
@@ -36,6 +44,37 @@ document.addEventListener('DOMContentLoaded', () => {
             ScrollTrigger.refresh(); // Refresh scroll positions on true resize
         }
     });
+
+    // ==========================================
+    // HERO Subtle Zoom & Parallax Effect
+    // ==========================================
+    const heroBg = document.querySelector('.hero-bg');
+
+    if (heroBg && window.innerWidth >= 768) {
+        // Subtle zoom effect (1 -> 1.08) as user scrolls past hero
+        gsap.to(heroBg, {
+            scale: 1.08,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: hero,
+                start: 'top top',
+                end: 'bottom top',
+                scrub: 0.8 // Smooth scrubbing
+            }
+        });
+
+        // Subtle parallax (background moves slower than scroll)
+        gsap.to(heroBg, {
+            y: '15%', // Moves down 15% of its height
+            ease: 'none',
+            scrollTrigger: {
+                trigger: hero,
+                start: 'top top',
+                end: 'bottom top',
+                scrub: 0.5
+            }
+        });
+    }
 
     // ==========================================
     // Header Scroll Effect
@@ -159,6 +198,23 @@ document.addEventListener('DOMContentLoaded', () => {
             ease: 'power3.out'
         });
     });
+
+    // Target Section Image Animation (Reveal with scale)
+    const targetImage = document.querySelector('.target-image-wrapper');
+    if (targetImage) {
+        gsap.from(targetImage, {
+            scrollTrigger: {
+                trigger: targetImage,
+                start: 'top 85%',
+                toggleActions: 'play none none none'
+            },
+            opacity: 0,
+            scale: 0.95,
+            y: 30,
+            duration: 1.0,
+            ease: 'power3.out'
+        });
+    }
 
 
 

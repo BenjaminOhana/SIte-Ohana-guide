@@ -341,9 +341,22 @@ img {
     right: 0;
     bottom: 0;
     z-index: 1;
-    background-image: url('../assets/images/hero-bg-final.png');
+    background-image: url('../assets/images/hero-bg-desktop.jpg');
     background-size: cover;
     background-position: center;
+    transform-origin: center center;
+    /* Ensure zoom scales from center */
+    will-change: transform;
+    /* GPU acceleration for smooth animation */
+}
+
+/* Mobile-specific hero image (vertical format) */
+@media (max-width: 767px) {
+    .hero-bg {
+        background-image: url('../assets/images/hero-bg-mobile.jpg');
+        background-position: center top;
+        /* Focus on top where iPad is */
+    }
 }
 
 .hero-bg::after {
@@ -1423,7 +1436,6 @@ img {
 .target-image-column {
     position: relative;
     display: block;
-    /* Changed from flex to block */
     width: 100%;
 }
 
@@ -1434,21 +1446,17 @@ img {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     width: 100%;
     background: #FAF8F5;
-    /* Match page background */
-    height: 100%;
-    /* Ensure it fills column height */
-    display: flex;
-    /* Center image if it doesn't fill */
-    align-items: center;
-    justify-content: center;
 }
 
 .target-real-photo {
     width: 100%;
-    height: 100%;
+    height: auto;
+    min-height: 400px;
     object-fit: cover;
+    object-position: 70% center;
+    /* Focus on iPad side of image */
     display: block;
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, opacity 0.6s ease;
 }
 
 /* Desktop Grid */
@@ -1456,9 +1464,9 @@ img {
     .target-split-layout {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        /* Equal width = bigger image */
         gap: 80px;
-        align-items: stretch;
+        align-items: center;
+        /* Center vertically, not stretch */
     }
 
     .target-block.negative {
@@ -1467,15 +1475,22 @@ img {
     }
 
     .target-image-wrapper {
-        height: 100%;
-        aspect-ratio: auto;
-        /* Remove aspect ratio on desktop */
-        max-height: none;
+        width: 100%;
+        height: auto;
+        min-height: 450px;
+        max-height: 600px;
     }
 
     .target-image-column {
-        display: flex;
-        align-items: stretch;
+        display: block;
+    }
+
+    .target-real-photo {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        object-position: 60% center;
+        /* Focus on iPad side */
     }
 }
 
