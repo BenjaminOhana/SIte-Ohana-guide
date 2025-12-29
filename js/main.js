@@ -190,12 +190,12 @@ document.addEventListener('DOMContentLoaded', () => {
             scrollTrigger: {
                 trigger: header,
                 start: 'top 85%',
-                toggleActions: 'play none none none' // Once and stay
+                toggleActions: 'play none none none'
             },
             opacity: 0,
-            y: 20, // Subtle movement
-            duration: 1.0, // Slower, more elegant
-            ease: 'power3.out'
+            y: 15, // Very subtle movement
+            duration: 1.4, // Slower, Apple-like
+            ease: 'power2.out' // Smoother deceleration
         });
     });
 
@@ -209,10 +209,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 toggleActions: 'play none none none'
             },
             opacity: 0,
-            scale: 0.95,
-            y: 30,
-            duration: 1.0,
-            ease: 'power3.out'
+            scale: 0.97, // Even more subtle
+            y: 20,
+            duration: 1.4,
+            ease: 'power2.out'
         });
     }
 
@@ -227,10 +227,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 toggleActions: 'play none none none'
             },
             opacity: 0,
-            y: 24, // 24px grid alignment
-            duration: 0.8,
-            delay: index * 0.1, // Keep stagger
-            ease: 'power3.out'
+            y: 20,
+            duration: 1.2, // Slower
+            delay: index * 0.15, // Slower stagger
+            ease: 'power2.out'
         });
     });
 
@@ -239,14 +239,14 @@ document.addEventListener('DOMContentLoaded', () => {
         gsap.from(item, {
             scrollTrigger: {
                 trigger: item,
-                start: 'top 85%', // Appear slightly later for drama
+                start: 'top 85%',
                 toggleActions: 'play none none none'
             },
             opacity: 0,
-            y: 20, // Very subtle lift
-            duration: 0.9, // Smooth entry
-            delay: index * 0.1, // Staggered ripple
-            ease: 'power3.out'
+            y: 15, // Subtle lift
+            duration: 1.2, // Elegant entry
+            delay: index * 0.12, // Smooth ripple
+            ease: 'power2.out'
         });
     });
 
@@ -259,11 +259,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 toggleActions: 'play none none none'
             },
             opacity: 0,
-            y: 24,
-            scale: 0.98, // Very subtle scale
-            duration: 0.8,
-            delay: index * 0.1,
-            ease: 'power3.out'
+            y: 20,
+            scale: 0.98,
+            duration: 1.2,
+            delay: index * 0.12,
+            ease: 'power2.out'
         });
     });
 
@@ -383,15 +383,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================
-    // Mobile Sticky CTA - Smart Show/Hide
-    // ==========================================
-    // ==========================================
     // Mobile Sticky CTA - Optimized with IntersectionObserver
     // ==========================================
     const mobileStickyCtaBar = document.getElementById('mobileStickyCtaBar');
 
     if (mobileStickyCtaBar && window.innerWidth <= 767) {
-        const hero = document.getElementById('hero');
+        const heroSection = document.getElementById('hero');
         const footer = document.querySelector('footer');
 
         // We'll track visibility of Hero and Footer
@@ -400,7 +397,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const updateCtaVisibility = () => {
             // Show CTA only if Hero is NOT visible AND Footer is NOT visible
-            // AND we are not at the very top (scrolled past hero)
             if (!isHeroVisible && !isFooterVisible) {
                 mobileStickyCtaBar.classList.add('visible');
             } else {
@@ -419,10 +415,10 @@ document.addEventListener('DOMContentLoaded', () => {
             updateCtaVisibility();
         }, {
             root: null,
-            threshold: 0 // Trigger as soon as 1px is visible/hidden
+            threshold: 0
         });
 
-        if (hero) stickyObserver.observe(hero);
+        if (heroSection) stickyObserver.observe(heroSection);
         if (footer) stickyObserver.observe(footer);
     }
 
